@@ -1,0 +1,124 @@
+/* Register.css */
+
+
+.register-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background: url('/WhatsApp Image 2024-10-15 at 22.24.38_ca14b77a.jpg') no-repeat center center/cover;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0%; /* Adjust the left value to move the overlay to the right */
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent overlay for better readability */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+/* Register.css */
+.register-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    color: white;
+    width: 100%;
+    max-width: 400px;
+    margin-left: 55%;
+    margin-bottom: 5%;
+    border: 6px solid orange; /* Add yellow border */
+}
+
+.register-content h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.register-content input {
+    padding: 15px;
+    width: 75%;
+    margin: 10px 25px;
+    border-radius: 5px;
+    border: 3px solid orange;
+    font-size: 1rem;
+}
+
+.register-container input:focus {
+    border: 3px solid tomato;
+    outline: none;
+}
+
+.register-content button {
+    width: 50%;
+    padding: 10px;
+    margin-left: 100px;
+    background-color: orange;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-content button:hover {
+    background-color: tomato;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .register-content {
+        padding: 20px;
+        max-width: 90%;
+        /* Reduce max width for smaller screens */
+    }
+
+    .register-content h2 {
+        font-size: 1.75rem;
+        /* Slightly smaller heading */
+    }
+
+    .register-content input {
+        padding: 12px;
+        font-size: 0.9rem;
+        /* Adjust input font size */
+    }
+
+    .register-content button {
+        padding: 8px;
+        font-size: 0.9rem;
+        /* Adjust button font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .register-content {
+        padding: 15px;
+        max-width: 100%;
+        /* Full width for very small screens */
+    }
+
+    .register-content h2 {
+        font-size: 1.5rem;
+        /* Smaller heading */
+    }
+
+    .register-content input {
+        padding: 10px;
+        font-size: 0.8rem;
+        /* Further adjust input size */
+    }
+
+    .register-content button {
+        padding: 7px;
+        font-size: 0.8rem;
+        /* Adjust button font size */
+    }
+}

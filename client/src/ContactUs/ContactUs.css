@@ -1,0 +1,68 @@
+.contactus-wrapper {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.contactus-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/pexels-elletakesphotos-1660030.jpg'); /* Set your image path here */
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center; /* Center the image */
+    z-index: 1; /* Ensure the background is behind the content */
+}
+
+.contactus-container {
+    position: relative;
+    z-index: 2; /* Ensure the container is above the background */
+    padding: 35px;
+    max-width: 600px;
+    margin: 75px auto; /* Center the container */
+    margin-right: 20px; /* Adjust right margin for right alignment */
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.6); /* Black background with transparency */
+    color: #FFD700; /* Gold color for text */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.contactus-container h1 {
+    margin-bottom: 16px;
+    font-size: 2.5rem;
+    color: #FFD700; /* Gold color */
+}
+
+.contactus-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contactus-container input,
+.contactus-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly less transparent */
+}
+
+.contactus-container button {
+    padding: 10px 20px;
+    background-color: #FFD700; /* Gold color */
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contactus-container button:hover {
+    background-color: #0056b3; /* Change to a darker shade on hover */
+}

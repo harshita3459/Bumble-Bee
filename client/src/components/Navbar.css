@@ -1,0 +1,94 @@
+/* General Navbar Styling */
+.navbar {
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    box-shadow: none;
+    background-color: white; /* Ensure the navbar stays visible while scrolling */
+}
+
+.navbar-logo img.large-logo {
+    height: 120px; /* Increased logo size */
+}
+
+.navbar-logo .logo-text {
+    font-size: 1.8rem; /* Adjusted text size */
+    margin-left: 10px;
+    color: #333; /* Changed text color */
+    font-weight: bold;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    margin-left: 20px;
+}
+
+.navbar-links li a,
+.logout-link {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+.navbar-links li a:hover,
+.logout-link:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+}
+
+/* Responsive Menu */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-responsive .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(245, 244, 212, 0.9);
+    width: 100%;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.navbar-responsive .navbar-links li {
+    margin: 10px 0;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .navbar.navbar-responsive .navbar-links {
+        display: flex;
+    }
+}

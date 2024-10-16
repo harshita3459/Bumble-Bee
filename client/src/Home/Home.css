@@ -1,0 +1,388 @@
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background: linear-gradient(to right, #fff4e4, #f7f3fa);
+    /* Gradient color transition similar to the reference image */
+}
+
+.left-content {
+    max-width: 500px;
+    margin-top: -20px;
+    /* Adjust this value as needed to move content upwards */
+    text-align: left;
+    /* Ensure text alignment is to the left */
+}
+
+.left-content h1 {
+    font-size: 4.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+    text-align: left;
+    /* Ensure h1 text alignment is to the left */
+}
+
+.left-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #666;
+    text-align: left;
+    /* Ensure paragraph text alignment is to the left */
+}
+
+.order-now-button {
+    background-color: #ffb03b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.order-now-button:hover {
+    background-color: #e59829;
+}
+
+.restaurant-select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+    color: #555;
+}
+
+.right-content {
+    position: relative;
+}
+
+.right-content img {
+    width: 600px;
+    /* Increased the image size */
+    border-radius: 15px;
+    margin-left: 50px;
+    /* Adjusted positioning */
+}
+
+.restaurant-info {
+    position: absolute;
+    top: 20px;
+    right: -40px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-card {
+    position: absolute;
+    bottom: -30px;
+    left: -40px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-card p {
+    font-weight: bold;
+}
+
+.restaurant-card h4 {
+    margin: 10px 0;
+}
+
+.restaurant-card span {
+    color: gold;
+}
+
+.how-it-works-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    /* Light background to differentiate section */
+}
+
+.how-it-works-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.how-it-works-section p {
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.how-it-works-steps {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.step {
+    width: 30%;
+    text-align: center;
+}
+
+.step img {
+    width: 35vh;
+    /* Adjust image size */
+    height: 25vh;
+    margin-bottom: 20px;
+}
+
+.step h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.step p {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .how-it-works-steps {
+        flex-direction: column;
+    }
+
+    .step {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.promo-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background: linear-gradient(to right, #fff4e4, #ffffff);
+}
+
+.promo-left img {
+    width: 400px;
+    border-radius: 15px;
+}
+
+.promo-right {
+    max-width: 600px;
+    text-align: left;
+}
+
+.promo-right h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.promo-right p {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    color: #666;
+}
+
+.promo-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.promo-list li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.promo-list li i {
+    margin-right: 10px;
+    color: #ffb03b;
+}
+
+/* Home.css */
+.customer-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    /* Increase the gap between items */
+    margin: 70px 0;
+    /* Increase the margin */
+}
+
+.achievements-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    /* Increase the gap between heading and stats */
+}
+
+.achievements-container h1 {
+    font-size: 4rem;
+    /* Increase the font size */
+    font-weight: bold;
+    color: #333;
+}
+
+.stats-container {
+    display: flex;
+    gap: 60px;
+    /* Increase the gap between stats */
+}
+
+.stat h2 {
+    font-size: 56px;
+    /* Increase the font size */
+    color: #ffb03b;
+}
+
+.stat p {
+    font-size: 22px;
+    /* Increase the font size */
+    color: #666;
+}
+
+/* Home.css */
+.testimonials-section-wrapper {
+    width: 100%;
+    background: linear-gradient(to right, #fff4e4, #f7f3fa);
+    padding: 50px 0;
+}
+
+.testimonials-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.testimonials-header {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.testimonials-header h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.testimonials-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+}
+
+.testimonials-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 20px;
+    /* Add some space between the testimonials and the image */
+}
+
+.testimonial {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.prev-button,
+.next-button {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.testimonial-content {
+    flex: 1;
+    padding: 10px;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    color: #666;
+}
+
+.customer-info {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.customer-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.customer-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.customer-rating {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.quote-image {
+    width: 250px;
+    height: auto;
+    position: relative;
+    right: 0;
+    top: 0;
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.image-slide-up {
+    animation: slide-up 0.8s ease-out forwards;
+}
+
+.how-it-works-image {
+    animation: slide-up 0.8s ease-out forwards;
+}
+
+.promo-image-slide-left {
+    animation: slide-left 0.8s ease-out forwards;
+}
