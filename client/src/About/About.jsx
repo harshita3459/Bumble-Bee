@@ -1,5 +1,6 @@
 import React from 'react';
 import './About.css';
+//import Footer from '../Footer/Footer';
 
 const AboutUs = () => {
   return (
@@ -21,6 +22,7 @@ const AboutUs = () => {
           Thank you for choosing us as your partner in culinary explorations. We look forward to helping you discover amazing dining experiences!
         </p>
       </div>
+    
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
+import { useNavigate } from 'react-router-dom';
+//import Footer from '../Footer/Footer'; // Import useNavigate for navigation
 import './DishList.css';
 
 const DishList = () => {
@@ -101,6 +102,7 @@ const DishList = () => {
           </div>
         ))}
       </div>
+     
     </div>
   );
 };

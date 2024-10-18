@@ -49,6 +49,7 @@
 
 import React, { useState } from 'react';
 import './ContactUs.css';
+//import Footer from '../Footer/Footer';
 
 const ContactUs = () => {
   const [name, setName] = useState('');
@@ -90,6 +91,7 @@ const ContactUs = () => {
           <button type="submit">Send Message</button>
         </form>
       </div>
+     
     </div>
   );
 };

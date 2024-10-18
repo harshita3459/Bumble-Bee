@@ -47,11 +47,6 @@ const RestaurantList = () => {
     ? restaurants.filter(restaurant => restaurant.address.toLowerCase().includes(selectedLocation.toLowerCase()))
     : restaurants;
 
-  const chunkedRestaurants = [];
-  for (let i = 0; i < filteredRestaurants.length; i += 4) {
-    chunkedRestaurants.push(filteredRestaurants.slice(i, i + 4));
-  }
-
   const openModal = (restaurant) => {
     setSelectedRestaurant(restaurant);
     setModalIsOpen(true);
@@ -90,16 +85,12 @@ const RestaurantList = () => {
     setSelectedLocation(e.target.value);
   };
 
-  const handleRestaurantClick = () => {
-    navigate(`/dishes`); // Pass restaurantId in the dynamic route
+  const handleRestaurantClick = (restaurantId) => {
+    navigate(`/dishes/${restaurantId}`); // Navigate to the dishes page, passing restaurantId
   };
 
   return (
     <div className="restaurant-container">
-      <video autoPlay muted loop id="myVideo">
-        <source src="admin video.mp4" type="video/mp4" />
-      </video>
-
       <div className="location-select-container">
         <select
           value={selectedLocation}
@@ -118,40 +109,38 @@ const RestaurantList = () => {
         {filteredRestaurants.length === 0 ? (
           <p>No restaurants available</p>
         ) : (
-          chunkedRestaurants.map((row, rowIndex) => (
-            <div key={rowIndex} className="restaurant-row">
-              {row.map((restaurant) => (
-                <div
-                  key={restaurant._id}
-                  className="restaurant-item"
-                  onClick={() => handleRestaurantClick(restaurant._id)}
-                >
-                  <img
-                    src={`http://localhost:5000${restaurant.image}`}
-                    alt={restaurant.name}
-                    className="restaurant-image"
-                  />
-                  <div className="restaurant-info">
-                    <h3>{restaurant.name}</h3>
-                    <p>Cuisine: {restaurant.cuisine}</p>
-                    <p>Address: {restaurant.address}</p>
-                    <div className="rating-stars">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <span
-                          key={star}
-                          onClick={() => {
-                            setRating(star);
-                            setReview(`Rated ${star} stars`);
-                          }}
-                          style={{ cursor: 'pointer', color: star <= rating ? 'gold' : 'gray' }}
-                        >
-                          ★
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+          filteredRestaurants.map((restaurant) => (
+            <div
+              key={restaurant._id}
+              className="restaurant-item"
+              onClick={() => handleRestaurantClick(restaurant._id)}
+            >
+              <div className="restaurant-image">
+                <img
+                  src={`http://localhost:5000${restaurant.image}`}
+                  alt={restaurant.name}
+                />
+              </div>
+              <div className="restaurant-info">
+                <h3>{restaurant.name}</h3>
+                <p><strong>Cuisine:</strong> {restaurant.cuisine}</p>
+                <p><strong>Address:</strong> {restaurant.address}</p>
+                <div className="rating-stars">
+                  <strong>Rating:</strong>
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <span
+                      key={star}
+                      onClick={() => {
+                        setRating(star);
+                        setReview(`Rated ${star} stars`);
+                      }}
+                      style={{ cursor: 'pointer', color: star <= rating ? 'gold' : 'gray' }}
+                    >
+                      ★
+                    </span>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           ))
         )}

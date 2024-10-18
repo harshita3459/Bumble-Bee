@@ -1,130 +1,194 @@
-/* General styling */
-/* General styling */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-    /* Remove flexbox properties */
-}
-
-h2 {
-    color: #333;
-}
-
-.ekqr-payment-container,
+/* General Styles */
 .payment-success-container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-    animation: fadeIn 0.5s ease-in-out;
-    margin: 20px auto;
-    /* Center the container and add margin */
-}
-
-/* Add a container class for centering content */
-.container {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f7;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBL7M9muaYeUBLl4JCpyqh6azNGC0EsKsUhw&s'); /* Add your background image */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    /* Ensure the container takes at least the full viewport height */
-    padding-top: 60px;
-    /* Add padding to the top to prevent content from being cut off */
+    padding: 40px 20px;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.form-group {
+.payment-success-container h2 {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 700;
     margin-bottom: 20px;
+    animation: fadeInDown 1.2s ease;
+}
+
+.payment-success-container p {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    animation: fadeInText 1.5s ease;
+}
+
+/* Button Styles */
+.give-feedback-btn {
+    background-color: #ff6f61;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 10px rgba(255, 111, 97, 0.4);
+    transform: translateY(0);
+}
+
+.give-feedback-btn:hover {
+    background-color: #ff4e39;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(255, 111, 97, 0.6);
+    animation: pulse 1s infinite;
+}
+
+/* Feedback Form Styles */
+.feedback-form {
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    animation: slideInUp 0.7s ease-in-out;
+}
+
+/* Form Group Styles */
+.form-group {
+    margin-bottom: 25px;
 }
 
 .form-group label {
     display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
 }
 
 .form-group input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 12px;
+    border: 2px solid #ff6f61;
+    border-radius: 8px;
     font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease-in-out;
 }
 
-.pay-button,
-button {
-    background-color: #28a745;
+/* Input Focus Effect */
+.form-group input:focus {
+    border-color: #ff4e39;
+    box-shadow: 0 0 15px rgba(255, 111, 97, 0.5);
+    transform: scale(1.02);
+}
+
+.form-group input::placeholder {
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.form-group input:focus::placeholder {
+    color: #ff6f61;
+}
+
+/* Submit Button Styles */
+.submit-feedback-btn {
+    background-color: #ff6f61;
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 4px;
+    border-radius: 50px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease-in-out;
+    font-size: 18px;
+    transition: all 0.4s ease;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(255, 111, 97, 0.4);
+    transform: translateY(0);
 }
 
-.pay-button:hover,
-button:hover {
-    background-color: #218838;
+.submit-feedback-btn:hover {
+    background-color: #ff4e39;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(255, 111, 97, 0.6);
+    animation: pulse 1s infinite;
 }
 
-button {
-    margin-top: 20px;
-}
-
-p {
-    margin-top: 20px;
-    color: #28a745;
-    font-weight: bold;
-}
-
+/* Feedback Form Visibility */
 #feedback-form {
-    margin-top: 20px;
     display: none;
 }
 
-#feedback-form input {
-    margin-bottom: 10px;
-}
-
-.feedback-success {
-    color: #28a745;
-    font-weight: bold;
-}
-
-/* Animations */
-@keyframes fadeIn {
+/* Animation Keyframes */
+@keyframes fadeInDown {
     from {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(-30px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Mobile responsive */
-@media (max-width: 600px) {
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
-    .ekqr-payment-container,
-    .payment-success-container {
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .feedback-form {
         max-width: 100%;
         padding: 20px;
     }
 
-    .form-group input {
+    .feedback-form input {
         font-size: 14px;
     }
 
-    .pay-button,
-    button {
-        font-size: 14px;
-        padding: 8px 16px;
+    .submit-feedback-btn {
+        font-size: 16px;
     }
 }

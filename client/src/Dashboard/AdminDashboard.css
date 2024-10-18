@@ -4,17 +4,26 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-color: linear-gradient(rgba(240, 198, 82, 0.5), rgba(245, 229, 160, 0.5));;
+    background: url('https://img.freepik.com/free-photo/flat-lay-arrangement-with-salad-box-sauce_23-2148247883.jpg?size=626&ext=jpg&ga=GA1.1.2113030492.1728950400&semt=ais_hybrid') no-repeat center center fixed;
+    background-size: cover;
+    background-blur: 5px;
+    color: #333;
 }
 
+/* Admin Dashboard Styles */
 .admin-dashboard {
-    position: static;
-    overflow: hidden;
+    position: relative;
+    padding: 20px;
+    min-height: 100vh;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent overlay */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-.admin-dashboard img{
+/* Admin Dashboard Image */
+.admin-dashboard img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     position: absolute;
     top: 0;
@@ -22,6 +31,7 @@ body {
     z-index: -1;
 }
 
+/* Heading Styles */
 h1 {
     text-align: center;
     color: #111111;
@@ -77,24 +87,7 @@ input:focus {
     box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
 }
 
-/* Submit Button */
-button[type="submit"] {
-    padding: 12px;
-    font-size: 16px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button[type="submit"]:hover {
-    background-color: #218838;
-    transform: scale(1.05);
-}
-
-/* Add Restaurant Button Centering */
+/* Button Styles */
 button {
     padding: 12px;
     font-size: 16px;
@@ -106,26 +99,11 @@ button {
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: block;
     margin: 20px auto;
-    /* Center the button */
 }
 
 button:hover {
     background-color: #218838;
     transform: scale(1.05);
-}
-
-/* Center the "Add Restaurant" Button */
-button {
-    padding: 12px;
-    font-size: 16px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: block;
-    margin: 20px auto;
 }
 
 /* Customer Feedback Section */
@@ -140,7 +118,7 @@ button {
     margin-bottom: 15px;
 }
 
-/* Feedback Box (Dibba) */
+/* Feedback Box */
 .feedback-box {
     background-color: #ffffff;
     border: 2px solid #ccc;
@@ -176,17 +154,6 @@ button {
     color: #555;
 }
 
-
-/* Video Background */
-.video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
 /* Pie Chart Section */
 .charts-container {
     display: flex;
@@ -200,7 +167,7 @@ button {
     animation: slideIn 1.2s ease-in-out;
 }
 
-.pie-chart {
+.chart {
     position: relative;
     width: 250px;
     height: 250px;
@@ -208,36 +175,11 @@ button {
 
 /* Responsive Pie Chart Sizing */
 @media (max-width: 768px) {
-    .pie-chart {
+    .chart {
         width: 200px;
         height: 200px;
     }
 
-    .chart {
-        width: 100%;
-    }
-}
-
-/* Loading and Error Handling */
-.loading {
-    color: #999;
-    font-size: 1.2rem;
-}
-
-.error {
-    color: red;
-    font-size: 1.2rem;
-    margin-top: 10px;
-}
-
-.success {
-    color: green;
-    font-size: 1.2rem;
-    margin-top: 10px;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
     h1 {
         font-size: 2rem;
     }
@@ -261,7 +203,7 @@ button {
         align-items: center;
     }
 
-    .pie-chart {
+    .chart {
         width: 200px;
         height: 200px;
     }
@@ -285,6 +227,24 @@ button {
         font-size: 14px;
         padding: 10px;
     }
+}
+
+/* Loading and Error Handling */
+.loading {
+    color: #999;
+    font-size: 1.2rem;
+}
+
+.error {
+    color: red;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.success {
+    color: green;
+    font-size: 1.2rem;
+    margin-top: 10px;
 }
 
 /* Animations */

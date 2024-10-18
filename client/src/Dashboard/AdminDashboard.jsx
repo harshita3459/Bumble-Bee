@@ -121,7 +121,7 @@ const AdminDashboard = () => {
 
   return (
     <div className="admin-dashboard">
-            <img src='/pexels-simple-soul-photogrphy-1100392298-22707871.jpg' alt='Admin Login' />
+
       {!isAuthenticated ? (
         <form onSubmit={handleLogin} className="auth-form">
           <h1>Admin Login</h1>

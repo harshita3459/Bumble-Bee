@@ -1,0 +1,68 @@
+/* Existing styles above remain unchanged */
+
+.ekqr-payment-container {
+  display: flex;
+  height: 100vh; /* Adjust height as needed */
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.left-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.image-section {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.right-section {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align at the top */
+}
+
+form {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 100%; 
+  margin-top: 20px;
+}
+
+input {
+  width: 100%; /* Full width of the form */
+  padding: 0.5rem; /* Add some padding */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+label {
+  color: white; /* Set label color to white */
+  font-weight: bold; /* Optional: make labels bold */
+}
+
+.pay-button {
+  background-color: #4CAF50; /* Green button */
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%; /* Full width button */
+}
+
+.pay-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}

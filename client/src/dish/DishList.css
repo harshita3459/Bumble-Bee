@@ -1,79 +1,202 @@
 .dish-list-container {
     padding: 0;
     margin-top: 0;
-    background-color: rgba(131, 124, 63, 0.822);
+    background: url('https://static.vecteezy.com/system/resources/thumbnails/020/115/455/small/food-background-breakfast-with-yogurt-granola-or-muesli-strawberries-banner-image-for-website-photo.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
-}
-
-h2 {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    }
+    
+    /* Parallax effect for background */
+    .dish-list-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Dim background */
+    z-index: 1;
+    transform: translateZ(-1px) scale(2); /* Parallax scrolling effect */
+    }
+    
+    h2 {
     text-align: center;
     margin-bottom: 20px;
-    font-size: 2rem;
-    color: #333;
-}
-
-.dish-list {
+    font-size: 2.5rem;
+    color: #f4f4f4;
+    z-index: 2;
+    font-family: 'Poppins', sans-serif; /* Classy font */
+    }
+    
+    .dish-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 20px;
-    overflow-y: auto; /* Enable scrolling */
-    flex-grow: 1; /* Fill the available space */
+    overflow-y: auto;
+    flex-grow: 1;
     padding: 10px;
-    max-height: calc(100vh - 100px); /* Ensure the list takes full height */
-}
-
-.dish-item {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: calc(100vh - 100px);
+    z-index: 2;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    }
+    
+    @keyframes fadeIn {
+    0% {
+    opacity: 0;
+    transform: translateY(20px);
+    }
+    100% {
+    opacity: 1;
+    transform: translateY(0);
+    }
+    }
+    
+    .dish-item {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     width: calc(25% - 15px);
-    transition: transform 0.3s ease;
-}
-
-.dish-image {
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    z-index: 2;
+    position: relative;
+    overflow: hidden;
+    animation: slideUp 0.5s ease-in-out forwards;
+    transform: translateY(100px);
+    }
+    
+    /* Bounce effect on hover */
+    .dish-item:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    filter: brightness(1.1);
+    }
+    
+    /* Subtle glow on card hover */
+    .dish-item:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    z-index: -1;
+    }
+    
+    @keyframes slideUp {
+    to {
+    transform: translateY(0);
+    }
+    }
+    
+    .dish-image {
     width: 100%;
     height: 150px;
     object-fit: cover;
-}
-
-.dish-info {
+    transition: transform 0.3s ease;
+    }
+    
+    .dish-item:hover .dish-image {
+    transform: scale(1.1);
+    }
+    
+    .dish-info {
     padding: 15px;
     text-align: center;
-}
-
-.dish-info h3 {
+    font-family: 'Roboto', sans-serif;
+    }
+    
+    .dish-info h3 {
     margin: 0 0 10px;
     font-size: 1.5rem;
     color: #333;
-}
-
-.dish-info p {
+    font-family: 'Poppins', sans-serif;
+    }
+    
+    .dish-info p {
     margin: 5px 0;
     color: #666;
-}
-
-.dish-item:hover {
-    transform: translateY(-5px);
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .dish-item {
-        width: calc(33.33% - 15px); /* Three items per row */
+    font-family: 'Roboto', sans-serif;
     }
-}
-
-@media (max-width: 800px) {
-    .dish-item {
-        width: calc(50% - 15px); /* Two items per row */
+    
+    .order-now-button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    z-index: 2;
     }
-}
-
-@media (max-width: 500px) {
-    .dish-item {
-        width: 100%; /* One item per row */
+    
+    /* Ripple effect on click */
+    .order-now-button:active::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: ripple 0.6s ease;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     }
-}
+    
+    @keyframes ripple {
+    0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+    }
+    100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+    }
+    }
+    
+    /* Hover effects */
+    .order-now-button:hover {
+    background-color: #e55347;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(255, 99, 71, 0.6);
+    }
+    
+    @media (max-width: 1200px) {
+    .dish-item {
+    width: calc(33.33% - 15px);
+    }
+    }
+    
+    @media (max-width: 800px) {
+    .dish-item {
+    width: calc(50% - 15px);
+    }
+    }
+    
+    @media (max-width: 500px) {
+    .dish-item {
+    width: 100%;
+    }
+    }
+    

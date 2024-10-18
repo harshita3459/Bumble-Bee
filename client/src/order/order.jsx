@@ -18,7 +18,7 @@ const OrderPage = () => {
       // Redirect to payment gateway if UPI is selected
       navigate('/payment-gateway', { state: { dish, paymentMethod } });
     } else {
-      alert('Order placed successfully! Cash on Delivery selected.');
+      navigate('/feedback', { state: {} });
       // Logic to handle Cash on Delivery order
     }
   };
@@ -26,10 +26,11 @@ const OrderPage = () => {
   return (
     <div className="admin-dashboard">
       <div className="content-wrapper">
-        <img src='/Group.png' alt='Group' className='group-img' />
+        {/* <img src='/Group.png' alt='Group' className='group-img' /> */}
         <div className="order-form-container">
-          <h2>Order {dish.name}</h2>
           <form onSubmit={handleSubmit}>
+            {/* Moved the heading inside the form */}
+            <h2>Order {dish.name}</h2>
             <div className="form-group">
               <label>Name:</label>
               <input type="text" required />

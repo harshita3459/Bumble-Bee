@@ -9,7 +9,6 @@ const PaymentSuccess = () => {
         experience: '',
         message: '',
         suggestion: '',
-
     });
 
     const handleFeedbackChange = (e) => {
@@ -46,11 +45,19 @@ const PaymentSuccess = () => {
             <h2>Thank You for Visiting Us</h2>
             <p>Payment was successful!</p>
 
-            <button onClick={() => document.getElementById('feedback-form').style.display = 'block'}>
+            <button
+                onClick={() => document.getElementById('feedback-form').style.display = 'block'}
+                className="give-feedback-btn"
+            >
                 Give Feedback
             </button>
 
-            <form id="feedback-form" style={{ display: 'none' }} onSubmit={handleFeedbackSubmit}>
+            <form
+                id="feedback-form"
+                style={{ display: 'none' }}
+                onSubmit={handleFeedbackSubmit}
+                className="feedback-form"
+            >
                 <div className="form-group">
                     <label>Name:</label>
                     <input
@@ -96,7 +103,9 @@ const PaymentSuccess = () => {
                     />
                 </div>
 
-                <button type="submit">Submit Feedback</button>
+                <button type="submit" className="submit-feedback-btn">
+                    Submit Feedback
+                </button>
             </form>
         </div>
     );

@@ -3,51 +3,54 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #e8f4f8;
-  /* Light blue background */
+  background-color: #ac99b1;
+  /* Neutral background */
 }
 
 /* Admin Dashboard Container */
 .admin-dashboard {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Align the content to the top */
   height: 100vh;
   padding: 20px;
+  position: relative; /* Allows absolute positioning of the background */
+}
+
+/* Left-Side Background Image */
+.admin-dashboard::before {
+  content: '';
+  position: absolute;
+  top: 10%; /* Adjust to shift the image down slightly */
+  left: 0;
+  width: 50%; /* Adjusted width for the image */
+  height: 60%;
+  background-image: url('/Group.png'); /* Update this with the correct image path */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain; /* Ensure it fits within the defined width */
+  z-index: -1; /* Ensures the background image is behind the form */
 }
 
 /* Content Wrapper Styling */
 .content-wrapper {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 30px;
-  /* Space between image and form */
-  background-color: #ffffff;
+  justify-content: flex-end; /* Push the form towards the right */
+  align-items: flex-start; /* Align items to the top */
   padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  /* Width of the content box */
   width: 100%;
-}
-
-/* Group Image Styling */
-.group-img {
-  width: 80px;
-  /* Reduced size of the image */
-  height: auto;
-  border-radius: 10px;
-  display: block;
-  /* Ensures image stays aligned to the left */
-  margin-right: 20px;
-  /* Adds space between image and form */
+  max-width: 1000px;
+  position: relative; /* To keep it above the background image */
+  z-index: 1; /* Ensures it appears above the background */
+  margin-left: 15%; /* Adds gap between the image and the form */
 }
 
 /* Order Form Container */
 .order-form-container {
+  flex: 1;
   max-width: 500px;
-  width: 100%;
+  margin-left: auto; /* Keeps the form aligned to the right */
+  margin-top: -20px; /* Moves the form slightly upwards */
 }
 
 /* Form Group Styling */
@@ -84,7 +87,7 @@ button:hover {
   background-color: #0056b3;
 }
 
-/* Heading Styling */
+/* Heading Styling (Inside the Form) */
 h2 {
   margin-bottom: 25px;
   color: #333;
